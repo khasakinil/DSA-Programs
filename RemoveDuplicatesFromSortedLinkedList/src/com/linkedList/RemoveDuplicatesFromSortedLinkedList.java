@@ -27,14 +27,18 @@ public class RemoveDuplicatesFromSortedLinkedList {
 		Node tmpNode = head;
 		while (tmpNode != null) {
 
+			boolean isNext = false;
 			if (tmpNode.getNext() != null) {
 				Node nextNode = tmpNode.getNext();
 				if (tmpNode.getData() == nextNode.getData()) {
 					tmpNode.setNext(tmpNode.getNext().getNext());
+					isNext = true;
 				}
 			}
 
-			tmpNode = tmpNode.getNext();
+			if (!isNext) {
+				tmpNode = tmpNode.getNext();
+			}
 		}
 	}
 
