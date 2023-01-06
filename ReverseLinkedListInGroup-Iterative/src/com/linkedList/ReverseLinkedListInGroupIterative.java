@@ -1,65 +1,89 @@
 package com.linkedList;
 
-import com.linkedList.node.Node;
-
 public class ReverseLinkedListInGroupIterative {
 
-	Node head;
-
-	public void insertInLinkedList(int data) {
-		Node newNode = new Node(data);
-		newNode.setNext(head);
-		head = newNode;
+	static class Node {
+		int data;
+		Node next;
 	}
 
-	public void printLinkedList() {
+	public static Node insertInLinkedList(Node head, int data) {
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.next = head;
+		head = newNode;
+		return head;
+	}
+
+	public static void printLinkedList(Node head) {
 		Node tempNode = head;
 		System.out.println();
 		while (tempNode != null) {
-			System.out.print(tempNode.getData());
-			if (tempNode.getNext() != null) {
+			System.out.print(tempNode.data);
+			if (tempNode.next != null) {
 				System.out.print(" -> ");
 			}
-			tempNode = tempNode.getNext();
+			tempNode = tempNode.next;
 		}
 	}
 
-	public Node reverseLinkedListInGroup(int groupSize) {
+	public static Node reverseLinkedListInGroup(Node head, int k) {
 		Node prev = null;
-		Node current = head;
-		Node next = null;
+		Node curr = head;
+		Node temp = null;
 		Node tail = null;
 		Node newHead = null;
 		Node join = null;
+		int t = 0;
 
-		while (current != null) {
+		while (curr != null) {
+			t = k;
+			join = curr;
+			prev = null;
 
-			int count = 0;
-			join = current;
-
-			while (current != null && count < groupSize) {
-				next = current.getNext();
-				current.setNext(prev);
-				prev = current;
-				current = next;
-				count++;
+			while (curr != null && t-- != 0) {
+				temp = curr.next;
+				curr.next = prev;
+				prev = curr;
+				curr = temp;
 			}
 
-//			if (newHead == null) {
-//				newHead = prev;
-//			}
-//
-//			if (tail != null) {
-//				tail.setNext(prev);
-//			}
-//
-//			tail = join;
-//			head = prev;
+			if ((newHead == null)) {
+				newHead = prev;
+			}
+
+			if (tail != null) {
+				tail.next = prev;
+			}
+
+			tail = join;
 		}
 
-		head = prev;
+		return newHead;
+	}
 
-		return prev;
+	public static void main(String args[]) {
+
+		Node head = null;
+
+		head = insertInLinkedList(head, 11);
+		head = insertInLinkedList(head, 22);
+		head = insertInLinkedList(head, 33);
+		head = insertInLinkedList(head, 44);
+		head = insertInLinkedList(head, 55);
+		head = insertInLinkedList(head, 66);
+		head = insertInLinkedList(head, 77);
+		head = insertInLinkedList(head, 88);
+		head = insertInLinkedList(head, 99);
+
+		int k = 3;
+
+		System.out.print("Linked List before reverse\n");
+		printLinkedList(head);
+		head = reverseLinkedListInGroup(head, k);
+
+		System.out.print("\nLinked list after reverse in group \n");
+		printLinkedList(head);
 	}
 
 }
