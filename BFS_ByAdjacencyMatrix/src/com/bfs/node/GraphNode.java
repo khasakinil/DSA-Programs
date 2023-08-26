@@ -15,6 +15,19 @@ public class GraphNode {
 		this.index = index;
 	}
 
+	public GraphNode() {
+		super();
+	}
+
+	public GraphNode(String name, int index, ArrayList<GraphNode> neighbors, boolean isVisited, GraphNode parent) {
+		super();
+		this.name = name;
+		this.index = index;
+		this.neighbors = neighbors;
+		this.isVisited = isVisited;
+		this.parent = parent;
+	}
+
 	public String getName() {
 		return name;
 	}
