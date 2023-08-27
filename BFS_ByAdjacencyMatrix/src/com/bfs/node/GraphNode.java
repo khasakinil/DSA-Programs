@@ -19,6 +19,14 @@ public class GraphNode {
 		super();
 	}
 
+	public GraphNode(String name, int index, ArrayList<GraphNode> neighbors, boolean isVisited) {
+		super();
+		this.name = name;
+		this.index = index;
+		this.neighbors = neighbors;
+		this.isVisited = isVisited;
+	}
+
 	public GraphNode(String name, int index, ArrayList<GraphNode> neighbors, boolean isVisited, GraphNode parent) {
 		super();
 		this.name = name;
