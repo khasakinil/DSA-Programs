@@ -1,19 +1,19 @@
 package com.linkedList;
 
-import com.linkedList.node.Node;
+import com.linkedList.node.NodeForLoopingLinkedList;
 
 public class RemoveDuplicatesFromSortedLinkedList {
 
-	Node head;
+	NodeForLoopingLinkedList head;
 
 	public void insertInLinkedList(int data) {
-		Node newNode = new Node(data);
+		NodeForLoopingLinkedList newNode = new NodeForLoopingLinkedList(data);
 		newNode.setNext(head);
 		head = newNode;
 	}
 
 	public void printLinkedList() {
-		Node tmpNode = head;
+		NodeForLoopingLinkedList tmpNode = head;
 		while (tmpNode != null) {
 			System.out.print(tmpNode.getData());
 			if (tmpNode.getNext() != null) {
@@ -24,12 +24,12 @@ public class RemoveDuplicatesFromSortedLinkedList {
 	}
 
 	public void removeDuplicatesFromLinkedList() {
-		Node tmpNode = head;
+		NodeForLoopingLinkedList tmpNode = head;
 		while (tmpNode != null) {
 
 			boolean isNext = false;
 			if (tmpNode.getNext() != null) {
-				Node nextNode = tmpNode.getNext();
+				NodeForLoopingLinkedList nextNode = tmpNode.getNext();
 				if (tmpNode.getData() == nextNode.getData()) {
 					tmpNode.setNext(tmpNode.getNext().getNext());
 					isNext = true;

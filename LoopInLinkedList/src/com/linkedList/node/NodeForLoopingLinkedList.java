@@ -1,8 +1,8 @@
 package com.linkedList.node;
 
-public class Node {
+public class NodeForLoopingLinkedList{
 	private int data;
-	private Node next;
+	private NodeForLoopingLinkedList next;
 
 	public int getData() {
 		return data;
@@ -12,12 +12,12 @@ public class Node {
 		this.data = data;
 	}
 
-	public Node getNext() {
+	public NodeForLoopingLinkedList getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
-		this.next = next;
+	public void setNext(NodeForLoopingLinkedList head) {
+		this.next = head;
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class Node {
 		return "Node [data=" + data + "]";
 	}
 
-	public Node(int data) {
+	public NodeForLoopingLinkedList(int data) {
 		super();
 		this.data = data;
 		this.next = null;

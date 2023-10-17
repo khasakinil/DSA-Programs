@@ -2,7 +2,7 @@ package com.linkedList.node;
 
 public class Node {
 	int data;
-	Node next;
+	NodeForLoopingLinkedList next;
 
 	public int getData() {
 		return data;
@@ -12,11 +12,11 @@ public class Node {
 		this.data = data;
 	}
 
-	public Node getNext() {
+	public NodeForLoopingLinkedList getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(NodeForLoopingLinkedList next) {
 		this.next = next;
 	}
 

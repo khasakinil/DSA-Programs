@@ -1,20 +1,20 @@
 package com.linkedList;
 
-import com.linkedList.node.Node;
+import com.linkedList.node.NodeForLoopingLinkedList;
 
 public class ReverseLinkedListIterative {
 
-	Node head;
+	NodeForLoopingLinkedList head;
 
 	public void insertInLinkedList(int data) {
-		Node newNode = new Node(data);
+		NodeForLoopingLinkedList newNode = new NodeForLoopingLinkedList(data);
 		newNode.setNext(head);
 		head = newNode;
 	}
 
 	public void printLinkedList() {
 		System.out.println();
-		Node tempNode = head;
+		NodeForLoopingLinkedList tempNode = head;
 		while (tempNode != null) {
 			System.out.print(tempNode.getData());
 			if (tempNode.getNext() != null) {
@@ -26,9 +26,9 @@ public class ReverseLinkedListIterative {
 	}
 
 	public void reverseLinkedListIterative() {
-		Node prev = null;
-		Node current = head;
-		Node next = null;
+		NodeForLoopingLinkedList prev = null;
+		NodeForLoopingLinkedList current = head;
+		NodeForLoopingLinkedList next = null;
 
 		while (current != null) {
 			next = current.getNext();

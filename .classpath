@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="BFS_ByAdjacencyMatrix/src"/>
+	<classpathentry kind="src" path="DeleteMiddleOfLinkedList/src"/>
+	<classpathentry kind="src" path="LoopInLinkedList/src"/>
+	<classpathentry kind="src" path="MiddleOfLinkedList/src"/>
+	<classpathentry kind="src" path="RemoveDuplicatesFromSortedLinkedList/src"/>
+	<classpathentry kind="src" path="ReverseLinkedList-Iterative/src"/>
+	<classpathentry kind="src" path="ReverseLinkedListInGroup-Iterative/src"/>
+	<classpathentry kind="output" path="BFS_ByAdjacencyMatrix/bin"/>
+</classpath>

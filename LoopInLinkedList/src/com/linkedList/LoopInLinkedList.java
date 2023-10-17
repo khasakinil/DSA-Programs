@@ -1,11 +1,11 @@
 package com.linkedList;
 
-import com.linkedList.node.Node;
+import com.linkedList.node.NodeForLoopingLinkedList;
 
 public class LoopInLinkedList {
 
-	static Node head;
-	static Node tail;
+	static NodeForLoopingLinkedList head;
+	static NodeForLoopingLinkedList tail;
 
 	public static void main(String[] args) {
 		LoopInLinkedList lill = new LoopInLinkedList();
@@ -21,9 +21,9 @@ public class LoopInLinkedList {
 		}
 	}
 
-	private boolean checkForLoopInLinkedList(Node head) {
-		Node first = head;
-		Node second = head;
+	private boolean checkForLoopInLinkedList(NodeForLoopingLinkedList head) {
+		NodeForLoopingLinkedList first = head;
+		NodeForLoopingLinkedList second = head;
 
 		while (second.getNext() != null && second.getNext().getNext() != null) {
 			first = first.getNext();
@@ -37,7 +37,7 @@ public class LoopInLinkedList {
 	}
 
 	private void insertInLinkedList(int data) {
-		Node newNode = new Node(data);
+		NodeForLoopingLinkedList newNode = new NodeForLoopingLinkedList(data);
 		newNode.setNext(head);
 		head = newNode;
 

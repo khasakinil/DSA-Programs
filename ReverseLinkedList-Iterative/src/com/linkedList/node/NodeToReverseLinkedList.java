@@ -1,8 +1,8 @@
 package com.linkedList.node;
 
-public class Node {
+public class NodeToReverseLinkedList {
 	private int data;
-	private Node next;
+	private NodeToReverseLinkedList next;
 
 	public int getData() {
 		return data;
@@ -12,23 +12,23 @@ public class Node {
 		this.data = data;
 	}
 
-	public Node getNext() {
+	public NodeToReverseLinkedList getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(NodeToReverseLinkedList next) {
 		this.next = next;
-	}
-
-	public Node(int data) {
-		super();
-		this.data = data;
-		this.next = null;
 	}
 
 	@Override
 	public String toString() {
 		return "Node [data=" + data + "]";
+	}
+
+	public NodeToReverseLinkedList(int data) {
+		super();
+		this.data = data;
+		this.next = null;
 	}
 
 }

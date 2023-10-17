@@ -1,10 +1,10 @@
 package com.linkedList;
 
-import com.linkedList.node.Node;
+import com.linkedList.node.NodeForLoopingLinkedList;
 
 public class DeleteMiddleOfLinkedList {
 
-	Node head;
+	NodeForLoopingLinkedList head;
 
 	public static void main(String args[]) {
 		DeleteMiddleOfLinkedList moll = new DeleteMiddleOfLinkedList();
@@ -20,8 +20,8 @@ public class DeleteMiddleOfLinkedList {
 	}
 
 	private void removeMiddleOfLinkedList() {
-		Node slowJump = head;
-		Node fastJump = head;
+		NodeForLoopingLinkedList slowJump = head;
+		NodeForLoopingLinkedList fastJump = head;
 		while (fastJump != null && fastJump.getNext() != null) {
 			fastJump = fastJump.getNext().getNext();
 			if (fastJump != null) {
@@ -33,7 +33,7 @@ public class DeleteMiddleOfLinkedList {
 	}
 
 	private void printLinkedList() {
-		Node tempNode = head;
+		NodeForLoopingLinkedList tempNode = head;
 		while (tempNode != null) {
 			System.out.print(tempNode.getData() + "");
 			tempNode = tempNode.getNext();
@@ -45,7 +45,7 @@ public class DeleteMiddleOfLinkedList {
 	}
 
 	private void insertInLinkedList(int data) {
-		Node newNode = new Node(data);
+		NodeForLoopingLinkedList newNode = new NodeForLoopingLinkedList(data);
 		newNode.setNext(head);
 		head = newNode;
 	}
