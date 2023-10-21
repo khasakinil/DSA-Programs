@@ -11,7 +11,7 @@ public class LoopInLinkedList {
 		LoopInLinkedList lill = new LoopInLinkedList();
 		lill.insertInLinkedList(23);
 		lill.createLoop(true);
-		System.out.println("Loop in Linked List : " + lill.checkForLoopInLinkedList(head));
+		System.out.println("Loop in Linked List :- " + lill.checkForLoopInLinkedList(head));
 	}
 
 	private void createLoop(boolean isLoop) {
